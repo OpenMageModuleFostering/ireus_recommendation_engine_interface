@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+    <name>IREUS_Recommendation_Engine_Interface</name>
+    <version>2.2.8</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL V3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>prudsys IREUS Online Recommendation Engine Connector</summary>
+    <description>New features:&#xD;
+- Uses the magento Cookie Restriction Mode of Magento 1.7.0.0 or higher for EU cookie policy compliance&#xD;
+&#xD;
+Bug fixes:&#xD;
+- Order tracking for grouped products is working now&#xD;
+- Several additional minor bug fixes</description>
+    <notes>Log out and log in after install to get access to the configuration interface! You will find it in the menu [System -&gt; Configuration -&gt; IREUS Recommendation Engine]</notes>
+    <authors><author><name>prudsys IREUS Team</name><user>ireus</user><email>support@ireus.net</email></author></authors>
+    <date>2012-06-08</date>
+    <time>08:27:15</time>
+    <contents><target name="magecommunity"><dir><dir name="Netresearch"><dir name="Ireus"><dir name="Block"><dir name="Catalog"><dir name="Product"><dir name="List"><file name="Upsell.php" hash="2063a8463153a5e74ab11333f6112c74"/></dir></dir></dir><dir name="Checkout"><dir name="Multishipping"><file name="Success.php" hash="72495e9ef43ab32d78ac9b225ad25e7b"/></dir></dir><file name="Data.php" hash="4ec619023cf595c9cf340a9cb206cfa9"/></dir><dir name="Helper"><file name="Data.php" hash="166807c6ae52889ee30ae9d5d9760f06"/></dir><dir name="Model"><file name="Observer.php" hash="4fd4fb15426f06d1600c8b3077a3f654"/></dir><dir name="controllers"><file name="ExportController.php" hash="47bee89251ba880d8637e84d91b4f1c7"/><file name="ExportController_fast.php" hash="fe1fe7099822093daccbbb80f8869c8c"/><file name="ExportController_final.php" hash="b4ee2c7737a2977d042b3ce64785898d"/><file name="ExportController_noprice.php" hash="0a4ed9db5d898a948005272119efbb83"/><file name="ExportController_singlerow.php" hash="66f5046202e18bb127e008f32aef329d"/></dir><dir name="etc"><file name="config.xml" hash="427543517a58add407579b3422328f4a"/><file name="system.xml" hash="bbcfa1c9d53dfbca4c323b7cfcb62a78"/></dir></dir></dir></dir></target><target name="magedesign"><dir><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="ireus.xml" hash="fa76c0766d2a2a74b1a28dac87240ced"/></dir><dir name="template"><dir name="ireus"><file name="data.phtml" hash="914c75fc9f1f09b3ec914a5aa12e1a71"/><file name="footer.phtml" hash="4f8718b50744c98cec9d1ffce31e2242"/><file name="recomm.phtml" hash="c56c8aa10531782cb0237a5cd7a715ad"/><file name="userrecomm.phtml" hash="879f8c79109f82ceff8a3c03d0c3ce1b"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir><dir name="modules"><file name="Netresearch_Ireus.xml" hash="51f0d7dfc505541ad5bbd81cac334a4c"/></dir></dir></target><target name="mage"><dir><dir name="lib"><dir name="Ireus"><dir name="Controller"><file name="Cache.php" hash="4c0843da6f3b6a96c1327efd78b3c734"/><file name="Export.php" hash="308c96a7cbbf2fc84156a08967779d55"/></dir><dir name="Model"><file name="Csv.php" hash="dfaab91056524008fe28853609bef31d"/><file name="File.php" hash="70a796322ba8c1dcbd1c60944b7e95db"/></dir><file name="Object.php" hash="cf2c29389d0ae7c04858d763e074e4f3"/><dir name="View"><dir name="Client"><file name="call.tpl.php" hash="75da798d5fd4d21208fe636a12b3085c"/><file name="event.tpl.php" hash="811de7acc963000255d36d77d626c2ce"/><file name="home.tpl.php" hash="ffda3ac0b5957cbbe0988bd7159835d0"/><file name="product.tpl.php" hash="08b9f0d4bf23f6546956b6db8add2120"/><file name="user.tpl.php" hash="ffda3ac0b5957cbbe0988bd7159835d0"/></dir><file name="Client.php" hash="c1739c7d943f63863a2bd7b546db3a6a"/></dir></dir><file name="IreusAutoloader.php" hash="4c6d6bec65a2d8f196e3a9d3b94114b8"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

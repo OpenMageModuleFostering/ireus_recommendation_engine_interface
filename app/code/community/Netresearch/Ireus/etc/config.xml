@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * IREUS
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0).
+ * It is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you are unable to obtain the license through the world-wide-web,
+ * please send an email to support@ireus.net so we can send you a copy.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Ireus to newer
+ * versions in the future. If you wish to customize Ireus for your
+ * needs please refer to http://www.ireus.net for more information.
+ *
+ * @category   IREUS Recommendation Engine
+ * @package    Ireus
+ * @copyright  Copyright (c) 2010 prudsys AG (http://www.prudsys.com)
+ * @author     Stephan Hoyer, Germany
+ * @author     Silvio Steiger, Germany
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * 
+ * $Id$
+ */
+-->
+<config>
+    <modules>
+        <Netresearch_Ireus>
+            <version>1.5.0.0</version>
+        </Netresearch_Ireus>
+    </modules>
+
+    <admin>
+    </admin>
+
+    <global>
+        <blocks>
+            <ireus><class>Netresearch_Ireus_Block</class></ireus>
+            <catalog>
+                <rewrite>
+                    <product_list_upsell>Netresearch_Ireus_Block_Catalog_Product_List_Upsell</product_list_upsell>
+                </rewrite>
+            </catalog>
+            <checkout>
+                <rewrite>
+                    <multishipping_success>Netresearch_Ireus_Block_Checkout_Multishipping_Success</multishipping_success>
+                </rewrite>
+            </checkout>
+        </blocks>
+        <models>
+            <ireus>
+                <class>Netresearch_Ireus_Model</class>
+            </ireus>
+        </models>
+        <helpers>
+            <ireus>
+                <class>Netresearch_Ireus_Helper</class>
+            </ireus>
+        </helpers>
+    </global>
+    
+    <adminhtml>
+        <translate>
+            <modules>
+                <Netresearch_Ireus>
+                    <files>
+                        <default>Netresearch_Ireus.csv</default>
+                    </files>
+                </Netresearch_Ireus>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <ireus translate="title" module="ireus">
+                                            <title>IREUS Recommendation Engine</title>
+                                            <sort_order>50</sort_order>
+                                        </ireus>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    
+    <default>
+       <ireus>
+          <settings>
+             <enable_session_cookies>1</enable_session_cookies>
+             <disable_magento_upsell>1</disable_magento_upsell>
+          </settings>
+       </ireus>
+    </default>
+
+    <frontend>
+        <routers>
+            <ireus>
+                <use>standard</use>
+                <args>
+                    <module>Netresearch_Ireus</module>
+                    <frontName>ireus</frontName>
+                </args>
+            </ireus>
+        </routers>
+        <translate>
+            <modules>
+                <Netresearch_Ireus>
+                    <files>
+                        <default>Netresearch_Ireus.csv</default>
+                    </files>
+                </Netresearch_Ireus>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <ireus>
+                    <file>ireus.xml</file>
+                </ireus>
+            </updates>
+        </layout>
+        <events>
+            <checkout_cart_add_product_complete>
+                <observers>
+                    <ireus>
+                      <type>singleton</type>
+                      <class>ireus/observer</class>
+                      <method>saveLatestAddedProduct</method>
+                    </ireus>
+                </observers>
+            </checkout_cart_add_product_complete>
+        </events>
+    </frontend>
+</config>

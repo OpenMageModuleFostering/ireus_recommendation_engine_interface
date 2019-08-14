@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/IREUS_Recommendation_Engine_Interface",
+    "type": "magento-module",
+    "license": "OSL-V3.0",
+    "homepage": "",
+    "description": "prudsys IREUS Online Recommendation Engine Connector",
+    "authors": [
+    {
+        "name": "prudsys IREUS Team",
+        "email": "support@ireus.net"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

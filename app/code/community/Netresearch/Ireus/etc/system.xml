@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * IREUS
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0).
+ * It is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you are unable to obtain the license through the world-wide-web,
+ * please send an email to support@ireus.net so we can send you a copy.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Ireus to newer
+ * versions in the future. If you wish to customize Ireus for your
+ * needs please refer to http://www.ireus.net for more information.
+ *
+ * @category   IREUS Recommendation Engine
+ * @package    Ireus
+ * @copyright  Copyright (c) 2010 prudsys AG (http://www.prudsys.com)
+ * @author     Stephan Hoyer, Germany
+ * @author     Silvio Steiger, Germany
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * 
+ * $Id$
+ */
+-->
+<config>
+	<sections>
+		<ireus translate="label" model="ireus">
+			<label>IREUS Recommendation Engine</label>
+			<tab>catalog</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>70</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<settings translate="label comment">
+					<label>Basic Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>100</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label>Activate IREUS connector:</label>
+							<frontend_type>select</frontend_type>
+                            <comment><![CDATA[For the use  of IREUS you also need to activate your IREUS Recommendation Engine on <a href="http://www.ireus.net/rp/setLanguage.do?ref=index.do&locale=en" target="_blank">www.ireus.net</a>.]]></comment>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<re_id translate="label comment">
+							<label>Recommendation Engine ID:</label>
+							<frontend_type>text</frontend_type>
+                            <comment><![CDATA[Get your own REID on <a href="http://www.ireus.net/rp/setLanguage.do?ref=registration.do&locale=en" target="_blank">www.ireus.net</a> for free.]]></comment>
+							<sort_order>200</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</re_id>
+						<security_code translate="label comment">
+							<label>Security code:</label>
+							<frontend_type>text</frontend_type>
+                            <comment>Enter an arbitrary key.</comment>
+                            <sort_order>300</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</security_code>
+						<image_width translate="label comment">
+							<label>Image width (pixel) *:</label>
+							<frontend_type>text</frontend_type>
+                            <comment><![CDATA[Width of images shown in recommendations.<sup>*</sup>]]></comment>
+							<sort_order>400</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</image_width>
+						<image_height translate="label comment">
+							<label>Image height (pixel) *:</label>
+							<frontend_type>text</frontend_type>
+                            <comment><![CDATA[Height of images shown in recommendations.<sup>*</sup>]]></comment>
+							<sort_order>500</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</image_height>
+                        <enable_session_cookies translate="label comment">
+                            <label>Enable Session Cookies:</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment><![CDATA[Enables IREUS-Session-only-Cookies for session personalization even when the respective user doesn't allow cookies. No user-profiles or persistent cookies will be stored! Enable this if IREUS features are strictly necessary for the service requested by your users.]]></comment>
+                            <sort_order>600</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_session_cookies>
+						<disable_magento_upsell translate="label comment">
+							<label>Disable Magento Upsell:</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>700</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</disable_magento_upsell>
+					</fields>
+                    <comment><![CDATA[<p style="font-size: 90%">Changes of settings maked with * will be effective first after rerun of your product data upload to IREUS. You may start the rerun manually in the IREUS customer area on <a href="http://www.ireus.net" target="_blank">www.ireus.net</a>.</p><br />]]></comment>
+				</settings>
+                <dataupload translate="label comment">
+                    <label>Data Upload</label>
+                    <comment>
+                        <![CDATA[
+                            <p>For the use of IREUS you need to upload your product catalogs data to your IREUS recommendation engine. You can do this as follows:<p>
+                            <ol><li>Go to <a href="http://www.ireus.net/rp/setLanguage.do?ref=index.do&locale=en" target="_blank">www.ireus.net</a> and access the customer area.<li>
+                            <li>Choose the button 'Product Data' and the option 'Http-Upload'.</li>
+                            <li>Copy following URLs to the appropriate fields of the product upload page and the category upload page.
+                            Replace <em>{{BaseUrl}}</em> by the base url of your Magento shop including hostname and the storecode if any 
+                            and replace <em>{{SecurityCode}}</em> by the Secutity code you entered above in the basic settings section.</li></ol>
+                            <br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="ireusproducts">Products: </label>
+                                    </td>
+                                    <td>
+                                        <input id="ireusproducts" type="text" size="90" class="editinput" name="ireusproducts" value="{{BaseUrl}}/ireus/export/products/code/{{SecurityCode}}" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="ireuscategories">Categories: </label>
+                                    </td>
+                                    <td>
+                                        <input id="ireuscategories" type="text" size="90" class="editinput" name="ireuscategories" value="{{BaseUrl}}/ireus/export/categories/code/{{SecurityCode}}" readonly>
+                                    </td>
+                                </tr>
+                            </table>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </dataupload>
+                <transactions translate="label comment">
+                    <label>Transaction Data</label>
+                    <comment>
+                        <![CDATA[
+                            <p>Display recommendations immediatelly with uploading transaction data to your IREUS recommendation engine. 
+                            For downloading the needed CSV file open the following url in an internet browser after 
+                            replacing <em>{{BaseUrl}}</em> by the base url of your Magento shop including hostname and the storecode if any and 
+                            replacing <em>{{SecurityCode}}</em> by the Secutity code you entered above in the basic settings section.<p>
+                            <p>This step is optional but recommended.</p>
+                            <br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="ireusorders">Orders: </label>
+                                    </td>
+                                    <td>
+                                        <input id="ireusorders" type="text" size="90" class="editinput" name="ireusorders" value="{{BaseUrl}}/ireus/export/orders/code/{{SecurityCode}}" readonly>
+                                    </td>
+                                </tr>
+                            </table>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>300</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </transactions>                
+                <recommtemplates translate="label comment">
+                    <label>Recommendation Templates</label>
+                    <comment>
+                        <![CDATA[
+                            <p>You may create templates for your IREUS recommendations that fit to the design of your shop.
+                            In the textbox below you find an example. Copy it and use it on the IREUS customer area -> designer -> own Html-Code.
+                            There you may change these examples to your needs.</p>
+                            <br>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="ireusrecommtemplate">Example template - product detail page:</label>
+
+                                    </td>
+                                    <td>
+                                        <textarea id="ireusrecommtemplate" name="ireusrecommtemplate" cols="90" rows="10" wrap="off" readonly="readonly">
+#set ($locale = $conversion.toLocale("de_DE"))
+#if($recommendations.size()>0)
+<div class="box-collateral box-up-sell">
+    <h2>What other customers are interested in actually</h2>
+    <table cellspacing="0" id="upsell-product-table" class="products-grid">
+        <tbody>
+            <tr class="first last odd">
+                #foreach($recommendation in $recommendations)
+                <td>
+                    <p class="product-image">
+                        <a href="$recommendation.URL"><img alt="$recommendation.name" src="$recommendation.imageURL" /></a>
+                    </p>
+                    <h5><a href="$recommendation.URL">$recommendation.name</a></h5>
+                    <div class="price-box">
+                        <span id="product-price-25" class="regular-price"><span class="price">$number.format("currency", $recommendation.netUnitPrice, $locale)</span></span>
+                    </div>
+                </td>
+                #end
+            </tr>
+        </tbody>
+    </table>
+</div>
+#end</textarea> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="ireusrecommtemplate">Example template - start &amp; category pages:</label>
+
+                                    </td>
+                                    <td>
+                                        <textarea id="ireusrecommtemplate" name="ireusrecommtemplate" cols="90" rows="10" wrap="off" readonly="readonly">
+#set ($locale = $conversion.toLocale("de_DE"))
+#if($recommendations.size()>0)
+<div class="block block-related">
+    <div class="block-title">
+        <strong><span>Choosen for you:</span></strong>
+    </div>
+    <div class="block-content">
+        <p class="block-subtitle">Items that might be of special interest for you:</p>
+        <ol class="mini-products-list" id="block-related">
+            #foreach($recommendation in $recommendations)
+            <li class="item odd">
+                <div class="product">
+                    <a href="$recommendation.URL" title="$recommendation.name" class="product-image"><img src="$recommendation.imageURL" alt="$recommendation.name" height="50" width="50"></a>
+                    <div class="product-details">
+                        <p class="product-name"><a href="$recommendation.URL">$recommendation.name</a></p>
+                        <div class="price-box">
+                            <span class="regular-price" id="product-price-52-related">
+                                <span class="price">$number.format("currency", $recommendation.netUnitPrice, $locale)</span>
+                            </span>
+                        </div>
+                        <a href="$recommendation.param1" class="link-wishlist">Add to Wishlist</a>
+                    </div>
+                </div>
+            </li>
+            #end
+        </ol>
+    </div>
+</div>
+#end</textarea> 
+                                    </td>
+                                </tr>
+
+                            </table>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>400</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </recommtemplates>
+                <shoptemplates translate="label comment">
+                    <label>Shop Template Integration</label>
+                    <comment>
+                        <![CDATA[
+                            <p>Change the reference block names in the file ireus.xml for displaying IREUS recommendations in customized shop templates or for changing the position of the IREUS recommendations. You find this file in the folder: <em>/app/design/frontend/default/default/layout/</em>.</p>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </shoptemplates>                        
+			</groups>
+		</ireus>
+	</sections>
+</config>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * IREUS
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0).
+ * It is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you are unable to obtain the license through the world-wide-web,
+ * please send an email to support@ireus.net so we can send you a copy.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Ireus to newer
+ * versions in the future. If you wish to customize Ireus for your
+ * needs please refer to http://www.ireus.net for more information.
+ *
+ * @category   IREUS Recommendation Engine
+ * @package    Ireus
+ * @copyright  Copyright (c) 2010 prudsys AG (http://www.prudsys.com)
+ * @author     Stephan Hoyer, Germany
+ * @author     Silvio Steiger, Germany
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * 
+ * $Id$
+ */
+-->
+
+
+<layout version="0.1.0">
+    <catalog_product_view>
+        <reference name="product.info.additional">
+            <block type="ireus/data" name="ireus_products" before="product_tag_list" as="ireus_products" template="ireus/recomm.phtml"/>
+        </reference>
+        <reference name="before_body_end">
+            <block type="ireus/data" name="ireus_dataproduct" before="ireus_footer" as="ireus_dataproduct" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_databasket" before="ireus_dataproduct" as="ireus_databasket" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_footer" after="-" as="ireus_footer" template="ireus/footer.phtml"/>
+        </reference>
+    </catalog_product_view>
+
+    <catalog_category_layered>
+        <reference name="right">
+            <block type="ireus/data" name="ireus_products" before="right.reports.product.viewed" as="ireus_products" template="ireus/userrecomm.phtml"/>
+        </reference>
+        <reference name="before_body_end">
+            <block type="ireus/data" name="ireus_data" before="ireus_footer" as="ireus_data" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_footer" after="-" as="ireus_footer" template="ireus/footer.phtml"/>
+        </reference>
+    </catalog_category_layered>
+
+    <catalog_category_default>
+        <reference name="right">
+            <block type="ireus/data" name="ireus_products" before="right.reports.product.viewed" as="ireus_products" template="ireus/userrecomm.phtml"/>
+        </reference>
+        <reference name="before_body_end">
+             <block type="ireus/data" name="ireus_data" before="ireus_footer" as="ireus_data" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_footer" after="-" as="ireus_footer" template="ireus/footer.phtml"/>
+        </reference>
+    </catalog_category_default>
+
+    <checkout_cart_index>
+        <reference name="content">
+            <block type="ireus/data" name="ireus_products" after="-" as="ireus_products" template="ireus/userrecomm.phtml"/>
+        </reference>
+        <reference name="before_body_end">
+            <block type="ireus/data" name="ireus_datauser" before="ireus_footer" as="ireus_datauser" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_databasket" before="ireus_datauser" as="ireus_databasket" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_footer" after="-" as="ireus_footer" template="ireus/footer.phtml"/>
+        </reference>
+    </checkout_cart_index>
+
+    <cms_index_index>
+        <reference name="right">
+            <block type="ireus/data" name="ireus_products" before="right.reports.product.viewed" as="ireus_products" template="ireus/userrecomm.phtml"/>
+        </reference>
+        <reference name="before_body_end">
+            <block type="ireus/data" name="ireus_data" before="ireus_footer" as="ireus_data" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_footer" after="ireus_data" as="ireus_footer" template="ireus/footer.phtml"/>
+        </reference>
+    </cms_index_index>
+
+    <checkout_onepage_success>
+        <reference name="before_body_end">
+            <block type="ireus/data" name="ireus_data" before="ireus_footer" as="ireus_data" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_footer" after="ireus_data" as="ireus_footer" template="ireus/footer.phtml"/>
+        </reference>
+    </checkout_onepage_success>
+
+    <checkout_multishipping_success>
+        <reference name="before_body_end">
+            <block type="ireus/data" name="ireus_data" before="ireus_footer" as="ireus_data" template="ireus/data.phtml"/>
+            <block type="ireus/data" name="ireus_footer" after="ireus_data" as="ireus_footer" template="ireus/footer.phtml"/>
+        </reference>
+    </checkout_multishipping_success>
+</layout>
